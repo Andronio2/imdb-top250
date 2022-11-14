@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  padding: 20px;
+}
+
+.main__header {
+  text-align: center;
+  font-size: 24px;
+}
+.main__window {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+
+}

@@ -1,9 +1,20 @@
-<h2>IMDb Top250</h2>
+<h2 class="main__header">IMDb Top250</h2>
 <div class="main__window">
   <ng-container *ngIf="(error$ | async) === ''; else errorMessage">
-    <app-video-card *ngFor="let card of video$ | async" [card]="card"></app-video-card>
+    <app-video-card
+      *ngFor="let card of (video$ | async) || [] | paginator: startIndex:endIndex"
+      [card]="card"
+    ></app-video-card>
   </ng-container>
   <ng-template #errorMessage>
-    {{error$ | async}}
+    {{ error$ | async }}
   </ng-template>
 </div>
+<mat-paginator
+  [length]="(video$ | async)!.length"
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10]"
+  aria-label="Select page"
+  (page)="onPage($event)"
+>
+</mat-paginator>
