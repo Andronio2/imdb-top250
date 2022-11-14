@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IVideo } from 'src/app/share/models/video.model';
 
 @Component({
   selector: 'app-video-card',
   templateUrl: './video-card.component.html',
-  styleUrls: ['./video-card.component.scss']
+  styleUrls: ['./video-card.component.scss'],
 })
-export class VideoCardComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class VideoCardComponent {
+  @Input() card!: IVideo;
 }

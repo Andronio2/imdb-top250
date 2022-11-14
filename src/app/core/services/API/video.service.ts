@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { IVideo } from 'src/app/share/models/video.model';
+import { ITopVideos } from 'src/app/share/models/video.model';
 
 @Injectable({
   providedIn: 'root',
@@ -10,9 +10,9 @@ import { IVideo } from 'src/app/share/models/video.model';
 export class VideoService {
   constructor(private http: HttpClient) {}
 
-  public getTopVideos(): Observable<IVideo> {
+  public getTopVideos(): Observable<ITopVideos> {
     const url = 'Top250Movies';
-    return this.http.get<IVideo>(url).pipe(
+    return this.http.get<ITopVideos>(url).pipe(
       catchError(() =>
         of({
           errorMessage: 'Server Error',

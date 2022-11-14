@@ -1,5 +1,5 @@
-import { IVideo } from '../share/models/video.model';
+import { ITopVideos } from '../share/models/video.model';
 
 export interface IAppState {
-  video: IVideo[];
+  video: ITopVideos[];
 }

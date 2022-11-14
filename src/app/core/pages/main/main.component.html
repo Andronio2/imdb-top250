@@ -1,1 +1,9 @@
 <h2>IMDb Top250</h2>
+<div class="main__window">
+  <ng-container *ngIf="(error$ | async) === ''; else errorMessage">
+    <app-video-card *ngFor="let card of video$ | async" [card]="card"></app-video-card>
+  </ng-container>
+  <ng-template #errorMessage>
+    {{error$ | async}}
+  </ng-template>
+</div>

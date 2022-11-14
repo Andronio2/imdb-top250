@@ -1,9 +1,9 @@
-export interface IVideo {
-  items: IItem[];
+export interface ITopVideos {
+  items: IVideo[];
   errorMessage: string;
 }
 
-export interface IItem {
+export interface IVideo {
   id: string;
   rank: string;
   title: string;
